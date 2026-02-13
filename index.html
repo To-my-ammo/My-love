@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Amina ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(45deg,#ff9a9e,#fecfef);
+  font-family:sans-serif;
+  text-align:center;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  width:300px;
+  box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  font-size:16px;
+  margin:10px;
+  cursor:pointer;
+}
+
+.yes{
+  background:#ff4d88;
+  color:white;
+}
+
+.no{
+  background:#eee;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="page1">
+  <h2>🐱💗</h2>
+  <h3>Will you be my Valentine?</h3>
+  <button class="yes" onclick="showLove()">Yes 💞</button>
+  <button class="no" onclick="moveNo(this)">No</button>
+  <p>(No is a little shy 😈)</p>
+</div>
+
+<div class="card" id="page2" style="display:none;">
+  <h2>🥰🌸💞</h2>
+  <h3>Yay! She said YES 💖</h3>
+
+  <p>
+  Lucky me,got you as my valentine .
+
+You know what’s my favorite part of every day?
+It’s loving you.
+
+My cute little Ammo, you’re not just someone .you’re my comfort, my happiness, my peace, and my biggest blessing. The way you make me smile without even trying is honestly magic.
+
+I don’t need a special day to love you, but today I just want to remind you that you mean everything to me.
+
+I love you so much, Ammo 💗🌹
+Always yours .<br><br>
+  
+
+  You are my today, tomorrow and forever.<br>
+  Thank you for being my love and best friend 💕<br><br>
+
+  I love you endlessly ❤️
+  </p>
+</div>
+
+<script>
+function showLove(){
+  document.getElementById("page1").style.display="none";
+  document.getElementById("page2").style.display="block";
+}
+
+function moveNo(btn){
+  btn.style.position="absolute";
+  btn.style.top=Math.random()*80+"%";
+  btn.style.left=Math.random()*80+"%";
+}
+</script>
+
+</body>
+</html>
