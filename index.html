@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Ariba ❤️</title>
+<title>For Amina ❤️</title>
 
 <style>
 body{
@@ -14,7 +14,7 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  background: linear-gradient(45deg,#ff9a9e,#fecfef);
+  background: linear-gradient(-45deg,#ff9a9e,#fecfef,#fad0c4,#ffd1ff);
   font-family:sans-serif;
   text-align:center;
 }
@@ -23,14 +23,14 @@ body{
   background:white;
   padding:25px;
   border-radius:20px;
-  width:300px;
-  box-shadow:0 0 20px rgba(0,0,0,0.2);
+  width:320px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
 button{
   padding:10px 20px;
   border:none;
-  border-radius:20px;
+  border-radius:25px;
   font-size:16px;
   margin:10px;
   cursor:pointer;
@@ -43,8 +43,27 @@ button{
 
 .no{
   background:#eee;
+  transition: top 0.1s linear, left 0.1s linear;
+}
+
+p{
+  line-height:1.6;
+  font-size:15px;
+}
+.glow{
+  display:block;
+  text-align:center;
+  font-weight:bold;
+  text-shadow:0 0 8px #ff4d88, 0 0 12px #ff85a6;
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+@keyframes glowPulse{
+  from{ text-shadow:0 0 5px #ff4d88; }
+  to{ text-shadow:0 0 20px #ff85a6; }
 }
 </style>
+
 </head>
 
 <body>
@@ -52,9 +71,11 @@ button{
 <div class="card" id="page1">
   <h2>🐱💗</h2>
   <h3>Will you be my Valentine?</h3>
+
   <button class="yes" onclick="showLove()">Yes 💞</button>
   <button class="no" onclick="moveNo(this)">No</button>
-  <p>(No is a little shy 😈)</p>
+
+  <p>(No is a little shy 😉)</p>
 </div>
 
 <div class="card" id="page2" style="display:none;">
@@ -62,28 +83,46 @@ button{
   <h3>Yay! She said YES 💖</h3>
 
   <p>
-  Lucky me,got you as my valentine .
+Lucky me,got you as my valentine .
 
 You know what’s my favorite part of every day?
 It’s loving you.
 
-My cute little Aribo, you’re not just someone .you’re my comfort, my happiness, my peace, and my biggest blessing. The way you make me smile without even trying is honestly magic.
+My cute little Ammo, you’re not just someone .you’re my comfort, my happiness, my peace, and my biggest blessing. The way you make me smile without even trying is honestly magic.
 
 I don’t need a special day to love you, but today I just want to remind you that you mean everything to me.
 
-I love you so much, Aribo 💗🌹
-Always yours .<br><br>
-  
+I love you so much, Ammo 💗🌹<br>
 
-  You are my today, tomorrow and forever.<br>
-  Thank you for being my love and best friend 💕<br><br>
+<span class="glow">Always yours meri magli.</span><br>
 
-  I love you endlessly ❤️
+You are my today, tomorrow and forever.<br>
+Thank you for being my love and best friend 💕<br><br>
+
+I love you endlessly ❤️
   </p>
 </div>
 
 <script>
+let yesClicked = false;
+
+window.addEventListener("beforeunload", function (e) {
+  if (!yesClicked) {
+    e.preventDefault();
+    e.returnValue = "";
+  }
+});
+
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+  if (!yesClicked) {
+    alert("na meri jaan phele yes karo ❤️");
+    history.pushState(null, null, location.href);
+  }
+};
+
 function showLove(){
+  yesClicked = true;
   document.getElementById("page1").style.display="none";
   document.getElementById("page2").style.display="block";
 }
